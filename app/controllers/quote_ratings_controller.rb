@@ -1,0 +1,2 @@
+class QuoteRatingsController < ApplicationController
+end
