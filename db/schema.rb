@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_28_190201) do
+ActiveRecord::Schema.define(version: 2021_09_28_190817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "quote_ratings", force: :cascade do |t|
+    t.boolean "liked"
+    t.bigint "quote_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["quote_id"], name: "index_quote_ratings_on_quote_id"
+  end
 
   create_table "quotes", force: :cascade do |t|
     t.string "quote"
@@ -22,4 +30,5 @@ ActiveRecord::Schema.define(version: 2021_09_28_190201) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "quote_ratings", "quotes"
 end

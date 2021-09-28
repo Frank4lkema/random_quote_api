@@ -1,5 +1,13 @@
+# frozen_string_literal: true
+#
 require 'rails_helper'
 
 RSpec.describe QuoteRating, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "associations" do
+    it { should belong_to(:quote) }
+  end
+
+  context "validations" do
+    it { should validate_presence_of(:liked) }
+  end
 end
