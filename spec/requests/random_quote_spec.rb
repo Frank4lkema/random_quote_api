@@ -5,7 +5,7 @@ RSpec.describe 'Random Quote endpoint', type: :request do
 
   # Test suite for GET /todos
   describe 'GET /quotes' do
-    before { get '/random-quote' }
+    before { get '/random_quotes' }
 
     it 'returns quotes' do
       expect(json).not_to be_empty
