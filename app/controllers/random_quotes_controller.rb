@@ -1,7 +1,6 @@
 class RandomQuotesController < ApplicationController
-
   def index
-    @quotes = Quote.all
-    json_response(@quotes)
+    @random_quote = ::Queries::GetRandomQuote.call
+    json_response(@random_quote)
   end
 end
