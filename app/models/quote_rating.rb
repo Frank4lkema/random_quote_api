@@ -4,5 +4,5 @@ class QuoteRating < ApplicationRecord
 
   # validations
   validates_presence_of :rating
-  validates :rating,  :inclusion => { :in => 1..5, :message => "Rating should be between 1 and 5" }
+  validates :rating, inclusion: {in: 1..5, message: "Rating should be between 1 and 5"}
 end
