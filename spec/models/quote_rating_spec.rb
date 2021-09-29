@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe QuoteRating, type: :model do
   context "associations" do
@@ -12,12 +12,12 @@ RSpec.describe QuoteRating, type: :model do
 
     describe "rating" do
       context "rating should be between 1 and 5" do
-        let(:quote) { build(:quote)}
-        subject(:rating) { build(:quote_rating, rating: 8, quote: quote ) }
-        it 'is invalid' do
+        let(:quote) { build(:quote) }
+        subject(:rating) { build(:quote_rating, rating: 8, quote: quote) }
+        it "is invalid" do
           rating.validate
 
-          expect(rating.errors[:rating]).to include('Rating should be between 1 and 5')
+          expect(rating.errors[:rating]).to include("Rating should be between 1 and 5")
         end
       end
     end

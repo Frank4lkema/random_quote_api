@@ -5,7 +5,7 @@ require "rails_helper"
 RSpec.describe "Quote rating endpoint " do
   # Initialize the test data
   let!(:quote) { create(:quote) }
-  let!(:quote_ratings) { create_list(:quote_rating, 20, quote_id: quote.id, rating: 3) }
+  let!(:quote_ratings) { create_list(:quote_rating, 20,:with_random_rating, quote_id: quote.id,) }
   let(:quote_id) { quote.id }
   let(:id) { quote_ratings.first.id }
 
