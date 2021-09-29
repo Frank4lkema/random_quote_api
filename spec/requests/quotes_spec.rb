@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Quote API', type: :request do
+RSpec.describe 'Quotes endpoint', type: :request do
   let!(:quotes) { create_list(:quote, 10) }
   let(:quote_id) { quotes.first.id }
 

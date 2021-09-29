@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_09_28_190817) do
   enable_extension "plpgsql"
 
   create_table "quote_ratings", force: :cascade do |t|
-    t.boolean "liked"
+    t.integer "rating"
     t.bigint "quote_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
