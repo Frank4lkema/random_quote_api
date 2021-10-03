@@ -6,5 +6,6 @@ module Types
     field :get_quote, resolver: Queries::GetQuote
     field :get_quotes, resolver: Queries::GetQuotes
     field :random_quote, resolver: Queries::RandomQuote
+    field :random_quote_on_rating, resolver: Queries::RandomQuoteBasedOnRating
   end
 end

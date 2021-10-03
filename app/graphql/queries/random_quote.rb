@@ -3,7 +3,7 @@ module Queries
     type [Types::QuoteType], null: false
 
     def resolve
-      ::Services::GetRandomQuote.call
+      ::Queries::GetRandomQuote.call
     end
   end
 end
