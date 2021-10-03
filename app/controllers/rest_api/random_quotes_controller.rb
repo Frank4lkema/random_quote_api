@@ -1,4 +1,4 @@
-module REST
+module RestApi
   class RandomQuotesController < ApplicationController
     def index
       @random_quote = ::Services::GetRandomQuote.call

@@ -9,8 +9,8 @@ RSpec.describe "Quote rating endpoint " do
   let(:quote_id) { quote.id }
   let(:id) { quote_ratings.first.id }
 
-  describe "GET /quotes/:quote_id/quote_ratings" do
-    before { get "/quotes/#{quote_id}/quote_ratings" }
+  describe "GET /rest_api/quotes/:quote_id/quote_ratings" do
+    before { get "/rest_api/quotes/#{quote_id}/quote_ratings" }
 
     context "when quote exists" do
       it "returns status code 200" do
@@ -35,8 +35,8 @@ RSpec.describe "Quote rating endpoint " do
     end
   end
 
-  describe "GET /quotes/:quote_id/quote_ratings/:id" do
-    before { get "/quotes/#{quote_id}/quote_ratings/#{id}" }
+  describe "GET /rest_api/quotes/:quote_id/quote_ratings/:id" do
+    before { get "/rest_api/quotes/#{quote_id}/quote_ratings/#{id}" }
 
     context "when quote_rating exists" do
       it "returns status code 200" do
@@ -61,11 +61,11 @@ RSpec.describe "Quote rating endpoint " do
     end
   end
 
-  describe "POST /quotes/:quote_id/quote_ratings/:id" do
+  describe "POST /rest_api/quotes/:quote_id/quote_ratings/:id" do
     let(:valid_attributes) { {rating: 4} }
 
     context "when request attributes are valid" do
-      before { post "/quotes/#{quote_id}/quote_ratings", params: valid_attributes }
+      before { post "/rest_api/quotes/#{quote_id}/quote_ratings", params: valid_attributes }
 
       it "returns status code 201" do
         expect(response).to have_http_status(201)
@@ -73,7 +73,7 @@ RSpec.describe "Quote rating endpoint " do
     end
 
     context "when an invalid request" do
-      before { post "/quotes/#{quote_id}/quote_ratings", params: {} }
+      before { post "/rest_api/quotes/#{quote_id}/quote_ratings", params: {} }
 
       it "returns status code 422" do
         expect(response).to have_http_status(422)

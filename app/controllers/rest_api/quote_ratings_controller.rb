@@ -1,4 +1,4 @@
-module REST
+module RestApi
   class QuoteRatingsController < ApplicationController
     before_action :find_quote
     before_action :find_quote_rating, only: [:show]

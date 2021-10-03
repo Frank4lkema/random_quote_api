@@ -1,4 +1,4 @@
-module REST
+module RestApi
   class QuotesController < ApplicationController
     def index
       @quotes = Quote.all
