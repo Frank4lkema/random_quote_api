@@ -4,8 +4,11 @@ require 'rails_helper'
 
 RSpec.describe 'Random Quote endpoint', type: :request do
   let!(:quotes) { create_list(:quote, 10) }
+  let(:first_quote) { quotes.first }
+  let(:second_quote) { quotes.second }
+  let!(:first_quote_ratings) { create_list(:quote_rating, 10, rating:3, quote: first_quote) }
+  let!(:second_quote_ratings) { create_list(:quote_rating, 10, rating:5, quote: second_quote) }
 
-  # Test suite for GET /todos
   describe 'GET /quotes' do
     before { get '/random_quotes' }
 
