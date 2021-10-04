@@ -6,7 +6,6 @@ RSpec.describe "Quotes endpoint", type: :request do
   let!(:quotes) { create_list(:quote, 10) }
   let(:quote_id) { quotes.first.id }
 
-  # Test suite for GET /todos
   describe "GET /rest_apiquotes" do
     before { get "/rest_api/quotes" }
 
@@ -24,7 +23,7 @@ RSpec.describe "Quotes endpoint", type: :request do
     before { get "/rest_api/quotes/#{quote_id}" }
 
     context "when the record exists" do
-      it "returns the todo" do
+      it "returns the quote" do
         expect(json).not_to be_empty
         expect(json["id"]).to eq(quote_id)
       end

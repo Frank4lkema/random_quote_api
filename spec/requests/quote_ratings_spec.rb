@@ -17,7 +17,7 @@ RSpec.describe "Quote rating endpoint " do
         expect(response).to have_http_status(200)
       end
 
-      it "returns all todo items" do
+      it "returns all quote ratings" do
         expect(json.size).to eq(20)
       end
     end
