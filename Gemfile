@@ -12,10 +12,13 @@ gem "puma", "~> 4.1"
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.4.2", require: false
 # needed for the Graphql api
-gem 'graphql', '1.9.18'
+gem "graphql", "1.9.18"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors"
+
+# Use Faraday to external HTTP requests
+gem "faraday"
 
 group :development, :test do
   gem "pry", "0.13.1"
