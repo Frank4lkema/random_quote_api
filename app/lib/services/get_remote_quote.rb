@@ -3,13 +3,13 @@ module Services
     include Callable
 
     def initialize
-      @url = "http://quotes.stormconsultancy.co.uk/random.json"
-      @quote_object = Struct.new(:quote,:author)
+      @url = "https://quotes.stormconsultancy.co.uk/random.json"
+      @quote_object = Struct.new(:quote, :author)
     end
 
     def call
       response = parse_json_response(get_remote_quote)
-      @quote_object.new(response["quote"],response["author"])
+      @quote_object.new(response["quote"], response["author"])
     end
 
     private
