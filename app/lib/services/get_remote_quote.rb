@@ -3,7 +3,7 @@ module Services
     include Callable
 
     def initialize
-      @url = "https://quotes.stormconsultancy.co.uk/random.json"
+      @url = "http://quotes.stormconsultancy.co.uk/random.json"
       @quote_object = Struct.new(:quote, :author)
     end
 
