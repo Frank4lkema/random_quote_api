@@ -14,7 +14,7 @@ RSpec.describe "Random Quote endpoint", type: :request do
 
     it "returns quotes" do
       expect(json).not_to be_empty
-      expect(json.size).to eq(1)
+      expect(json).to be_a_kind_of(Hash)
     end
 
     it "returns status code 200" do
