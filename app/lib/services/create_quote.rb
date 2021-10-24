@@ -7,7 +7,7 @@ module Services
     end
 
     def call
-      Quote.create(quote: @quote_object.quote, author: @quote_object.author )
+      Quote.create(quote: @quote_object.quote, author: @quote_object.author)
     end
   end
 end

@@ -12,6 +12,11 @@ module Services
         it "expect to create a Quote" do
           expect { service.call(quote_object: quote_object.new("This is a test quote", "Frank")) }.to change(Quote, :count).by(1)
         end
+
+        it "expect to return a Quote object" do
+          result = service.call(quote_object: quote_object.new("This is a test quote", "Frank"))
+          expect(result).to be_a_kind_of(Quote)
+        end
       end
     end
   end
